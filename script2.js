@@ -10,32 +10,39 @@ function addItem(e){
         //create new list item with span-element + text:
         let newLi = document.createElement("li");
         todolist.appendChild(newLi);
-        let span = document.createElement("span");
-        span.innerHTML = userInput.value + " ";
-        newLi.appendChild(span);
+        let textSpan = document.createElement("span");
+        textSpan.innerHTML = userInput.value + " ";
+        newLi.appendChild(textSpan);
+        //add edit-btn to new list item:
+        let eBtn = document.createElement("button");
+        eBtn.innerHTML = "edit";
+        newLi.appendChild(eBtn);
         //add x-btn to new list item:
         let xBtn = document.createElement("button");
         xBtn.innerHTML = "del";
         newLi.appendChild(xBtn);
-        //add eventListener for new list item (cross through or uncross):
-        newLi.addEventListener("click", () => {
-            if(!newLi.style.textDecoration){
-                newLi.style.textDecoration = "line-through";
+        //add eventListener for text in span (cross through or uncross):
+        textSpan.addEventListener("click", () => {
+            if(!textSpan.style.textDecoration){
+                textSpan.style.textDecoration = "line-through";
             } else {
-                newLi.style.textDecoration = "";
+                textSpan.style.textDecoration = "";
             }
         }); 
-        //add eventListener for x-button (delete item):
-        xBtn.addEventListener("click", (e) => {
-            e.preventDefault();
-            xBtn.parentElement.remove();
-        });    
+        //add eventListener for edit button:
         
 
 
 
 
 
+
+        //add eventListener for x-button (delete item):
+        xBtn.addEventListener("click", (e) => {
+            e.preventDefault();
+            xBtn.parentElement.remove();
+        });    
+        
 
         //reset user input:
         userInput.value = "";

@@ -7,30 +7,36 @@ function addItem(e){
     //get user input:
     let userInput = document.querySelector("#input-field");
     if(userInput.value){
-        //create new list item:
+        //create new list item with span-element + text:
         let newLi = document.createElement("li");
-        newLi.innerHTML = userInput.value + " ";
         todolist.appendChild(newLi);
+        let span = document.createElement("span");
+        span.innerHTML = userInput.value + " ";
+        newLi.appendChild(span);
         //add x-btn to new list item:
-        let xBtn = document.createElement("a");
-        xBtn.setAttribute("href", "");
-        xBtn.innerHTML = "X";
+        let xBtn = document.createElement("button");
+        xBtn.innerHTML = "del";
         newLi.appendChild(xBtn);
         //add eventListener for new list item (cross through or uncross):
         newLi.addEventListener("click", () => {
             if(!newLi.style.textDecoration){
-                newLi.style.textDecoration = "line-through";     //curly brackets weg?
+                newLi.style.textDecoration = "line-through";
             } else {
                 newLi.style.textDecoration = "";
             }
         }); 
-
-
         //add eventListener for x-button (delete item):
         xBtn.addEventListener("click", (e) => {
             e.preventDefault();
             xBtn.parentElement.remove();
         });    
+        
+
+
+
+
+
+
         //reset user input:
         userInput.value = "";
 

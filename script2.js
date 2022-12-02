@@ -30,13 +30,38 @@ function addItem(e){
             }
         }); 
         //add eventListener for edit button:
-        
-
-
-
-
-
-
+        eBtn.addEventListener("click", () => {
+            //if button text is "edit":
+            if(eBtn.innerHTML === "edit"){
+                //change button text to "save"  (change back to "edit" later):
+                eBtn.innerHTML = "save";
+                //save list item text into variable:
+                let savedText = textSpan.innerHTML;
+                //create input:
+                let editInput = document.createElement("input");
+                editInput.setAttribute("type", "text");
+                //put saved item text into input:
+                editInput.setAttribute("value", savedText);
+                //editInput.value = savedText;
+                console.log("editInput is: " + editInput);
+                //remove span:
+                textSpan.remove();
+                //append input to list item:
+                newLi.prepend(editInput);
+            } else {   //if button text is "save":
+                //editInput.value is saved in var, var is appended as new text to textSpan which is appended again:
+                let editInput = document.querySelector("li > input");
+                let savedText = editInput.value;
+                console.log(savedText);
+                console.log(textSpan.innerHTML);
+                textSpan.innerHTML = savedText;
+                newLi.prepend(textSpan);
+                //editInput is deleted
+                editInput.remove();
+                //eBtn text is set back to "edit":
+                eBtn.innerHTML = "edit";
+            }
+        });
         //add eventListener for x-button (delete item):
         xBtn.addEventListener("click", (e) => {
             e.preventDefault();

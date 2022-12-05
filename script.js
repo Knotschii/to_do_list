@@ -67,8 +67,6 @@ function addItem(e){
             e.preventDefault();
             xBtn.parentElement.remove();
         });    
-        
-
         //reset user input:
         userInput.value = "";
 

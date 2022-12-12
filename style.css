@@ -1,0 +1,77 @@
+h1 {
+    font-family: cursive;
+    text-decoration: underline;
+    display: flex;
+    justify-content: center; 
+}
+
+
+ul {
+    list-style-type: none;
+    font-size: 20px;   
+}
+
+button {
+    border-radius: 50%;
+    border-color: blue;
+    border: 2px solid blue;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 16px 16px;
+    color: white;
+    min-height: 50px; 
+    min-width: 50px;
+    cursor: pointer;
+    display: flex;
+    justify-content: flex-end;
+    
+}
+
+
+span {
+    font-size: 30px;
+    display: flex;
+    align-items: center;
+    padding-left: 5%;
+    flex: 1 1 80%;   
+}
+
+li{
+    size: 80%;
+    display: flex;
+    justify-content: center;
+    
+    cursor: pointer;
+    border-color:rgba(76, 0, 255, 0.671) ;
+    border-width: 2px;
+    border-style:groove;
+    row-gap: 10px;
+    background-color: rgba(245, 239, 239, 0.37);
+    margin-bottom: 4px;
+    
+}
+
+
+#input-btn{
+    cursor: pointer;
+    background-color: rgba(206, 203, 17, 0.432);
+    font-size: 20px;
+    border-color: antiquewhite;   
+}
+
+
+#input-field{
+    background-color: rgba(69, 4, 245, 0.308);
+    
+}
+
+.input{
+    display: grid;
+    justify-content: center;
+    height: 70px;
+}
+
+body{
+    background: radial-gradient(crimson, rgb(27, 51, 158), rgba(255, 255, 255, 0.26));
+       
+}
+
